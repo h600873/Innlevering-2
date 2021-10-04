@@ -1,5 +1,5 @@
 package no.hvl.dat100;
-import java.util.Arrays;
+
 
 public class O1_A {
 
@@ -14,15 +14,16 @@ public class O1_A {
 		System.out.print(posisjonTall(tabell1, 9));
 		reverser(tabell1);
 		System.out.print(erSortert(tabell1));
-		settSammen(tabell1, tabell2);
+		int [] h = settSammen(tabell1, tabell2); skrivUt(h);
 		
 	}
 	//a
 	public static void skrivUt(int [] tabell) {
 		
 		for (int i = 0; i<tabell.length; i++) {
-			System.out.println(tabell[i]);
+			System.out.print(tabell[i]);
 		}
+		System.out.println();
 	}
 	//b
 	public static String tilStreng(int [] tabell) {
@@ -106,19 +107,16 @@ public class O1_A {
 		int lengde = tabell1.length + tabell2.length;
 		
 		int [] sammenTabell = new int [lengde];
-		int pos = 0;
 		
-		for (int i : tabell1) {
-			sammenTabell[pos] = i;
-			pos ++;
+		for (int i = 0; i<tabell1.length; i++) {
+			sammenTabell[i] = tabell1[i];
 		}
 		
-		for (int i : tabell2) {
-			sammenTabell[pos] = i;
-			pos ++;
+		for (int j = 0; j<tabell2.length; j++) {
+			sammenTabell[tabell1.length + j] = tabell2[j];
 		}
 		
-		System.out.println(Arrays.toString(sammenTabell));
+		//System.out.println(sammenTabell);
 		return sammenTabell;
 		
 	}
